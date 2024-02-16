@@ -40,7 +40,7 @@ function Technology({ images, titles }) {
       <h1 className="text-center text-3xl lg:text-5xl font-bold text-black">
         Technology
       </h1>
-      <section ref={ref} className="flex flex-wrap gap-10 my-10">
+      <section ref={ref} className="flex flex-wrap gap-10 my-10 justify-center items-center">
         {images.map((image, index) => (
           <motion.div
             variants={cardvariantslg}
