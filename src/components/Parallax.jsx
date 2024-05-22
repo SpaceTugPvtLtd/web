@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import parallaxImage from "../assets/parallax.png";
+import parallaxImage from "../assets/parallax-1.png";
 import maskImage from "../assets/mask.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 function Parallax() {
