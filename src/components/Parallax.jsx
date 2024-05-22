@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import parallaxImage from "../assets/parallax-1.png";
 import maskImage from "../assets/mask.png";
 import { motion, useScroll, useTransform } from "framer-motion";
+import LazyLoad from "react-lazyload";
+
 function Parallax() {
   const ref = useRef(null);
 
@@ -70,23 +72,27 @@ function Parallax() {
         </motion.p>
       </motion.div>
 
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${parallaxImage})`,
-          backgroundPosition: "bottom",
-          backgroundSize: "cover",
-          y: backgroundY,
-        }}
-      />
-      <motion.div
-        className="absolute inset-0 z-20"
-        style={{
-          backgroundImage: `url(${maskImage})`,
-          backgroundPosition: "bottom",
-          backgroundSize: "cover",
-        }}
-      />
+      <LazyLoad forceVisible>
+        <motion.div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${parallaxImage})`,
+            backgroundPosition: "bottom",
+            backgroundSize: "cover",
+            y: backgroundY,
+          }}
+        />
+      </LazyLoad>
+      <LazyLoad forceVisible>
+        <motion.div
+          className="absolute inset-0 z-20"
+          style={{
+            backgroundImage: `url(${maskImage})`,
+            backgroundPosition: "bottom",
+            backgroundSize: "cover",
+          }}
+        />
+      </LazyLoad>
     </div>
   );
 }
